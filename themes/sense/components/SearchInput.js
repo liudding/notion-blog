@@ -42,18 +42,18 @@ const SearchInput = ({ currentTag, currentSearch, cRef }) => {
       setSearchKey(val)
     }
   }
-  function lockSearchInput () {
+  function lockSearchInput() {
     lock = true
   }
 
-  function unLockSearchInput () {
+  function unLockSearchInput() {
     lock = false
   }
-  return <div className='flex w-full bg-gray-100'>
+  return <div className='flex w-full bg-gray-100 border-2 border-gray-400'>
     <input
       ref={searchInputRef}
       type='text'
-      className={'outline-none w-full text-sm pl-2 transition focus:shadow-lg font-light leading-10 text-black bg-gray-100 dark:bg-gray-800 dark:text-white'}
+      className={'outline-none w-full text-sm pl-2 transition font-light leading-10 text-black bg-gray-100 dark:bg-gray-800 dark:text-white'}
       onKeyUp={handleKeyUp}
       onCompositionStart={lockSearchInput}
       onCompositionUpdate={lockSearchInput}
@@ -64,14 +64,14 @@ const SearchInput = ({ currentTag, currentSearch, cRef }) => {
 
     <div className='-ml-8 cursor-pointer float-right items-center justify-center py-2'
       onClick={() => { handleSearch(searchKey) }}>
-        <i className={`hover:text-black transform duration-200  text-gray-500 cursor-pointer fas ${onLoading ? 'fa-spinner animate-spin' : 'fa-search'}`} />
+      <i className={`hover:text-black transform duration-200  text-gray-500 cursor-pointer fas ${onLoading ? 'fa-spinner animate-spin' : 'fa-search'}`} />
     </div>
 
     {(searchKey && searchKey.length &&
       <div className='-ml-12 cursor-pointer dark:bg-gray-600 dark:hover:bg-gray-800 float-right items-center justify-center py-2'>
         <i className='hover:text-black transform duration-200 text-gray-400 cursor-pointer fas fa-times' onClick={cleanSearch} />
       </div>
-      )}
+    )}
   </div>
 }
 
