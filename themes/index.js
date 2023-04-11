@@ -7,10 +7,11 @@ import * as hexo from './hexo'
 import * as medium from './medium'
 import * as nobelium from './nobelium'
 import * as matery from './matery'
-import * as example from './example'
 import * as simple from './simple'
+import * as sense from './sense'
 
 export const ALL_THEME = [
+  'sense',
   'hexo',
   'matery',
   'next',
@@ -27,6 +28,6 @@ export {
   fukasawa,
   nobelium,
   matery,
-  example,
-  simple
+  simple,
+  sense
 }
